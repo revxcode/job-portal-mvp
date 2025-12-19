@@ -73,7 +73,14 @@ export default async function JobDetailPage({ params }: PageProps) {
 
               <div className="w-14 h-14 rounded-md bg-gray-100 border border-gray-200 flex items-center justify-center overflow-hidden shrink-0">
                 {job.company.logoUrl ? (
-                  <Image src={job.company.logoUrl} alt={job.company.name} width={200} height={200} className="w-full h-full object-contain" />
+                  <Image
+                    src={`https://ui-avatars.com/api/?name=${encodeURI(job.company.name)}&background=random`}
+                    alt={job.company.name}
+                    width={200}
+                    height={200}
+                    className="w-full h-full object-contain"
+                    unoptimized
+                  />
                 ) : (
                   <span className="text-lg font-semibold text-gray-600">
                     {job.company.name.charAt(0)}
