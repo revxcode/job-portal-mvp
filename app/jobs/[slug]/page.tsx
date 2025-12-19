@@ -1,31 +1,23 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { dummyJobs } from '@/lib/dummy-job'; // Sesuaikan path
-import { formatIDR } from '@/utils/currency'; // Sesuaikan path
-import { formatDate } from '@/utils/date'; // Sesuaikan path
+import { dummyJobs } from '@/lib/dummy-job';
+import { formatIDR } from '@/utils/currency';
+import { formatDate } from '@/utils/date';
 import { Job } from '@/types/job';
 import Image from 'next/image';
 
 interface PageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
-// ---------------------------------------------------------
-// 1. FUNGSI FETCH DATA (Simulasi Database)
-// ---------------------------------------------------------
-// Karena ini Server Component, kita bisa panggil database langsung di sini.
-// Untuk sekarang kita filter dari dummy data.
 function getJob(slug: string): Job | undefined {
   return dummyJobs.find((j) => j.slug === slug);
 }
 
-// ---------------------------------------------------------
-// 2. GENERATE METADATA (SEO Browser & WA)
-// ---------------------------------------------------------
-// Ini biar kalau link disebar di WA, muncul judul & deskripsinya
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const job = getJob(params.slug);
+  const { slug } = await params;
+  const job = getJob(slug);
 
   if (!job) {
     return { title: 'Lowongan Tidak Ditemukan' };
@@ -35,27 +27,24 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: `${job.title} di ${job.company.name}`,
     description: `Lamar lowongan ${job.title} di ${job.company.name} sekarang. Gaji: ${formatIDR(job.salary.min, job.salary.isHidden)}.`,
     openGraph: {
-      images: [job.company.logoUrl || ''] // Gambar preview saat share link
+      images: [job.company.logoUrl || '']
     }
   };
 }
 
-// ---------------------------------------------------------
-// 3. GENERATE SCHEMA (JSON-LD untuk Google Jobs)
-// ---------------------------------------------------------
 function generateJobSchema(job: Job) {
   return {
     '@context': 'https://schema.org',
     '@type': 'JobPosting',
     title: job.title,
-    description: job.description, // HTML description
+    description: job.description,
     identifier: {
       '@type': 'PropertyValue',
       name: job.company.name,
       value: job.id,
     },
     datePosted: job.postedAt,
-    validThrough: job.closingDate, // Kapan lowongan tutup
+    validThrough: job.closingDate,
     employmentType: job.jobType,
     hiringOrganization: {
       '@type': 'Organization',
@@ -83,20 +72,17 @@ function generateJobSchema(job: Job) {
   };
 }
 
-// ---------------------------------------------------------
-// 4. MAIN COMPONENT (Tampilan UI)
-// ---------------------------------------------------------
-export default function JobDetailPage({ params }: PageProps) {
-  console.log(params);
+export default async function JobDetailPage({ params }: PageProps) {
+  const { slug } = await params;
 
-  const job = getJob(params.slug);
+  const job = getJob(slug);
 
-  // Safety Net: Kalau slug ngawur, lempar ke halaman 404
+
   if (!job) {
     notFound();
   }
 
-  // Generate Schema JSON
+
   const jsonLd = generateJobSchema(job);
 
   return (
@@ -132,7 +118,7 @@ export default function JobDetailPage({ params }: PageProps) {
               {/* Logo Perusahaan Besar */}
               <div className="w-16 h-16 rounded-lg bg-gray-100 border border-gray-200 flex items-center justify-center overflow-hidden">
                 {job.company.logoUrl ? (
-                  <Image src={job.company.logoUrl} alt={job.company.name} className="w-full h-full object-contain" />
+                  <Image src={job.company.logoUrl} alt={job.company.name} width={200} height={200} className="w-full h-full object-contain" />
                 ) : (
                   <span className="text-2xl font-bold text-gray-400">
                     {job.company.name.charAt(0)}
@@ -161,7 +147,6 @@ export default function JobDetailPage({ params }: PageProps) {
             <div className="md:col-span-2 p-8 border-r border-gray-100">
               <h2 className="text-lg font-bold text-gray-900 mb-4">Deskripsi Pekerjaan</h2>
 
-              {/* HATI-HATI: Render HTML dari Database */}
               {/* Gunakan class 'prose' dari @tailwindcss/typography jika ada, atau styling manual */}
               <div
                 className="prose max-w-none text-gray-600 leading-relaxed space-y-4"
