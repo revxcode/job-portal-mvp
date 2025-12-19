@@ -1,7 +1,22 @@
 import { dummyJobs } from '@/lib/dummy-job';
 import { JobCard } from '@/components/JobCard';
+import JobSearch from '@/components/JobSearch';
 
-export default function Home() {
+interface HomeProps {
+  searchParams: Promise<{ q?: string }>
+}
+
+export default async function Home({ searchParams }: HomeProps) {
+  const { q } = await searchParams;
+  const query = q?.toLowerCase() || "";
+
+  const filteredJobs = dummyJobs.filter((job) => {
+    return (
+      job.title.toLowerCase().includes(query) ||
+      job.company.name.toLowerCase().includes(query)
+    );
+  });
+
   return (
     <main className="min-h-screen bg-gray-50 pb-20">
       {/* HERO SECTION SEDERHANA */}
@@ -13,6 +28,7 @@ export default function Home() {
           <p className="text-gray-500">
             Lowongan kerja terkurasi untuk developer Indonesia.
           </p>
+          <JobSearch />
         </div>
       </div>
 
@@ -21,14 +37,14 @@ export default function Home() {
         {/* Trik CSS Grid: 1 kolom di HP, 2 di Tablet, 3 di Laptop */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-          {dummyJobs.map((job) => (
+          {filteredJobs.map((job) => (
             <JobCard key={job.id} job={job} />
           ))}
 
         </div>
 
         {/* EMPTY STATE (Safety Net) */}
-        {dummyJobs.length === 0 && (
+        {filteredJobs.length === 0 && (
           <div className="text-center py-20 text-gray-500">
             Belum ada lowongan tersedia saat ini.
           </div>
