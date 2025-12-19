@@ -24,10 +24,9 @@
 
 ## 🛠️ Tech Stack
 
-- **Framework:** [Next.js 15](https://nextjs.org/) (App Router)
+- **Framework:** [Next.js 16](https://nextjs.org/) (App Router)
 - **Language:** [TypeScript](https://www.typescriptlang.org/)
 - **Styling:** [Tailwind CSS](https://tailwindcss.com/)
-- **Font:** [Geist](https://vercel.com/font) - Optimized with `next/font`
 - **Package Manager:** [pnpm](https://pnpm.io/)
 
 ## 📁 Project Structure
@@ -50,14 +49,14 @@ job-portal-mvp/
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 22+ 
 - pnpm (recommended) or npm/yarn/bun
 
 ### Installation
 
 1. Clone the repository
 ```bash
-git clone <repository-url>
+git clone https://github.com/ersyncd/job-portal-mvp.git
 cd job-portal-mvp
 ```
 
@@ -96,16 +95,6 @@ pnpm lint         # Run ESLint
 - [Next.js Documentation](https://nextjs.org/docs) - Learn about Next.js features and API
 - [Next.js Tutorial](https://nextjs.org/learn) - Interactive Next.js tutorial
 - [TypeScript Handbook](https://www.typescriptlang.org/docs/) - TypeScript documentation
-
-## 🚢 Deployment
-
-### Deploy on Vercel
-
-The easiest way to deploy is using the [Vercel Platform](https://vercel.com/new):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/your-username/job-portal-mvp)
-
-For more deployment options, check out the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying).
 
 ## 📄 License
 
