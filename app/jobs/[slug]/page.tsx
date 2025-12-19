@@ -79,7 +79,7 @@ export default async function JobDetailPage({ params }: PageProps) {
                     width={200}
                     height={200}
                     className="w-full h-full object-contain"
-                    unoptimized
+                    unoptimized={true}
                   />
                 ) : (
                   <span className="text-lg font-semibold text-gray-600">

@@ -36,7 +36,7 @@ export const JobCard = ({ job }: JobCardProps) => {
                 width={200}
                 height={200}
                 className="w-11 h-11 rounded-md object-contain border border-gray-100"
-                unoptimized
+                unoptimized={true}
               />
             ) : (
               <div className="w-11 h-11 rounded-md bg-linear-to-br from-gray-700 to-gray-900 flex items-center justify-center text-white font-semibold text-sm">
