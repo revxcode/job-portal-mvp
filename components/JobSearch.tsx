@@ -14,6 +14,11 @@ export default function JobSearch() {
   const debouncedTerm = useDebounce(searchTerm, 500);
 
   useEffect(() => {
+    const currentQuery = searchParams.get('q')?.toString() || '';
+
+    // guard to prevent Infinite loop 
+    if (debouncedTerm == currentQuery) return;
+
     const params = new URLSearchParams(searchParams);
 
     if (debouncedTerm) {
@@ -22,7 +27,6 @@ export default function JobSearch() {
       params.delete('q');
     }
 
-    // Update URL
     replace(`${pathname}?${params.toString()}`);
 
   }, [debouncedTerm, replace, pathname, searchParams]);
