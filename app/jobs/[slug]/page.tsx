@@ -47,7 +47,6 @@ export default async function JobDetailPage({ params }: PageProps) {
   return (
     <main className="min-h-screen bg-gray-50 py-10">
 
-      {/* INJECT SCHEMA KE HEAD (Tak Kasat Mata) */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -55,14 +54,12 @@ export default async function JobDetailPage({ params }: PageProps) {
 
       <div className="container mx-auto px-4 max-w-4xl">
 
-        {/* Tombol Back */}
         <Link href="/" className="text-gray-500 hover:text-blue-600 text-sm mb-6 inline-block font-medium">
           &larr; Kembali ke Lowongan
         </Link>
 
         <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
 
-          {/* HEADER: Judul & Info Utama */}
           <div className="p-8 border-b border-gray-100">
             <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
               <div>
@@ -74,7 +71,6 @@ export default async function JobDetailPage({ params }: PageProps) {
                 </div>
               </div>
 
-              {/* Logo Perusahaan Besar */}
               <div className="w-16 h-16 rounded-lg bg-gray-100 border border-gray-200 flex items-center justify-center overflow-hidden">
                 {job.company.logoUrl ? (
                   <Image src={job.company.logoUrl} alt={job.company.name} width={200} height={200} className="w-full h-full object-contain" />
@@ -86,7 +82,6 @@ export default async function JobDetailPage({ params }: PageProps) {
               </div>
             </div>
 
-            {/* Tags & Salary */}
             <div className="flex flex-wrap items-center gap-4 mt-6">
               <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">
                 {job.jobType.replace('_', ' ')}
@@ -99,14 +94,11 @@ export default async function JobDetailPage({ params }: PageProps) {
             </div>
           </div>
 
-          {/* BODY: Deskripsi Lowongan & Sidebar */}
           <div className="grid grid-cols-1 md:grid-cols-3">
 
-            {/* KIRI: Konten Deskripsi (HTML Render) */}
             <div className="md:col-span-2 p-8 border-r border-gray-100">
               <h2 className="text-lg font-bold text-gray-900 mb-4">Deskripsi Pekerjaan</h2>
 
-              {/* Gunakan class 'prose' dari @tailwindcss/typography jika ada, atau styling manual */}
               <div
                 className="prose max-w-none text-gray-600 leading-relaxed space-y-4"
                 dangerouslySetInnerHTML={{ __html: job.description }}
@@ -120,7 +112,6 @@ export default async function JobDetailPage({ params }: PageProps) {
               </ul>
             </div>
 
-            {/* KANAN: Sidebar Apply */}
             <div className="p-8 bg-gray-50 flex flex-col gap-6">
               <div className="p-4 bg-white rounded-xl border border-gray-200 shadow-sm">
                 <p className="text-sm text-gray-500 mb-1">Batas Lamaran</p>

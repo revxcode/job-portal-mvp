@@ -19,7 +19,7 @@ export default async function Home({ searchParams }: HomeProps) {
 
   return (
     <main className="min-h-screen bg-gray-50 pb-20">
-      {/* HERO SECTION SEDERHANA */}
+
       <div className="bg-white border-b border-gray-200 py-12 mb-10">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-3xl font-extrabold text-gray-900 mb-2">
@@ -32,18 +32,14 @@ export default async function Home({ searchParams }: HomeProps) {
         </div>
       </div>
 
-      {/* GRID JOB LISTING */}
       <div className="container mx-auto px-4">
-        {/* Trik CSS Grid: 1 kolom di HP, 2 di Tablet, 3 di Laptop */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
           {filteredJobs.map((job) => (
             <JobCard key={job.id} job={job} />
           ))}
-
         </div>
 
-        {/* EMPTY STATE (Safety Net) */}
         {filteredJobs.length === 0 && (
           <div className="text-center py-20 text-gray-500">
             Belum ada lowongan tersedia saat ini.
