@@ -18,22 +18,22 @@ export default async function Home({ searchParams }: HomeProps) {
   });
 
   return (
-    <main className="min-h-screen bg-gray-50 pb-20">
+    <main className="min-h-screen bg-gray-50">
 
-      <div className="bg-white border-b border-gray-200 py-12 mb-10">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-3xl font-extrabold text-gray-900 mb-2">
+      <div className="bg-white border-b border-gray-200 py-16 mb-12">
+        <div className="container mx-auto px-4 text-center max-w-2xl">
+          <h1 className="text-4xl font-bold text-gray-900 mb-3 leading-tight">
             Temukan Pekerjaan Impianmu
           </h1>
-          <p className="text-gray-500">
+          <p className="text-base text-gray-500 mb-8">
             Lowongan kerja terkurasi untuk developer Indonesia.
           </p>
           <JobSearch />
         </div>
       </div>
 
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="container mx-auto px-4 pb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
 
           {filteredJobs.map((job) => (
             <JobCard key={job.id} job={job} />
@@ -41,8 +41,8 @@ export default async function Home({ searchParams }: HomeProps) {
         </div>
 
         {filteredJobs.length === 0 && (
-          <div className="text-center py-20 text-gray-500">
-            Belum ada lowongan tersedia saat ini.
+          <div className="text-center py-24 text-gray-400">
+            <p className="text-sm font-medium">Belum ada lowongan tersedia saat ini.</p>
           </div>
         )}
       </div>

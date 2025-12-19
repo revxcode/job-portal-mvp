@@ -18,20 +18,16 @@ interface JobCardProps {
 }
 
 export const JobCard = ({ job }: JobCardProps) => {
-  // Trik Avatar Fallback: Ambil inisial huruf pertama
   const companyInitial = job.company.name.charAt(0).toUpperCase();
 
   return (
     <Link
       href={`/jobs/${job.slug}`}
-      className="block group" // Group: untuk efek hover barengan
+      className="block group"
     >
-      <div className="bg-white border border-gray-200 rounded-xl p-6 hover:border-blue-500 hover:shadow-md transition-all duration-300">
+      <div className="bg-white border border-gray-200 rounded-lg p-5 hover:border-gray-300 hover:shadow-sm transition-all duration-300">
 
-        {/* HEADER: Logo & Title */},
-        <div className="flex items-start gap-4 mb-4">
-
-          {/* LOGO SECTION (Dengan Fallback Logic) */}
+        <div className="flex items-start gap-3 mb-4">
           <div className="flex shrink-0">
             {job.company.logoUrl ? (
               <Image
@@ -39,53 +35,46 @@ export const JobCard = ({ job }: JobCardProps) => {
                 alt={job.company.name}
                 width={200}
                 height={200}
-                className="w-12 h-12 rounded-lg object-contain border border-gray-100"
+                className="w-11 h-11 rounded-md object-contain border border-gray-100"
                 unoptimized
               />
             ) : (
-              <div className="w-12 h-12 rounded-lg bg-gray-800 flex items-center justify-center text-white font-bold text-xl">
+              <div className="w-11 h-11 rounded-md bg-linear-to-br from-gray-700 to-gray-900 flex items-center justify-center text-white font-semibold text-sm">
                 {companyInitial}
               </div>
             )}
           </div>
 
-          {/* TEXT SECTION */}
-          <div>
-            <h3 className="font-bold text-lg text-gray-900 group-hover:text-blue-600 transition-colors">
+          <div className="flex-1 min-w-0">
+            <h3 className="font-semibold text-base text-gray-900 group-hover:text-gray-700 transition-colors truncate">
               {job.title}
             </h3>
-            <p className="text-sm text-gray-500">{job.company.name}</p>
+            <p className="text-xs text-gray-500 mt-0.5">{job.company.name}</p>
           </div>
         </div>
 
-        {/* BADGES SECTION */}
         <div className="flex flex-wrap gap-2 mb-4">
-          {/* Badge 1: Job Type (Warna-warni) */}
-          <span className={`text-xs font-medium px-2.5 py-0.5 rounded ${getJobTypeColor(job.jobType)}`}>
+          <span className={`text-xs font-medium px-2 py-1 rounded-full ${getJobTypeColor(job.jobType)}`}>
             {job.jobType.replace('_', ' ')}
           </span>
 
-          {/* Badge 2: Work Mode (Simpel) */}
-          <span className="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded border border-gray-200">
+          <span className="bg-gray-50 text-gray-700 text-xs font-medium px-2 py-1 rounded-full border border-gray-200">
             {job.workMode}
           </span>
         </div>
 
-        {/* FOOTER: Gaji & Tanggal */}
-        <div className="flex items-center justify-between mt-4 pt-4 border-t border-gray-100">
+        <div className="flex items-center justify-between pt-3 border-t border-gray-100">
           <div className="flex flex-col">
-            <span className="text-xs text-gray-400">Salary</span>
-            {/* Panggil Utility Function Currency di sini */}
-            <span className="text-sm font-semibold text-gray-900">
+            <span className="text-xs text-gray-400 font-medium">Salary</span>
+            <span className="text-sm font-semibold text-gray-900 mt-1">
               {formatIDR(job.salary.min, job.salary.isHidden)}
               {!job.salary.isHidden && ` - ${formatIDR(job.salary.max)}`}
             </span>
           </div>
 
           <div className="text-right">
-            <span className="text-xs text-gray-400">Posted</span>
-            {/* Panggil Utility Function Date di sini */}
-            <p className="text-xs text-gray-600 font-medium">
+            <span className="text-xs text-gray-400 font-medium">Posted</span>
+            <p className="text-xs text-gray-600 font-medium mt-1">
               {formatDate(job.postedAt)}
             </p>
           </div>
