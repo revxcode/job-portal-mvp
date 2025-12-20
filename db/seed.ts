@@ -12,12 +12,12 @@ async function main() {
     location: job.location,
     description: job.description,
     requirements: job.requirements,
-    salaryMin: job.salary.min,
-    salaryMax: job.salary.max,
-    companyName: job.company.name,
-    companyLogoUrl: job.company.logoUrl,
-    closingDate: new Date(job.closingDate),
-    postedAt: new Date(job.postedAt),
+    salaryMin: job.salaryMin,
+    salaryMax: job.salaryMax,
+    companyName: job.companyName,
+    companyLogoUrl: job.companyLogoUrl,
+    closingDate: job.closingDate ? new Date(job.closingDate) : new Date(),
+    postedAt: job.postedAt ? new Date(job.postedAt) : new Date(),
   }));
 
   await db.insert(jobs).values(dataToInsert);

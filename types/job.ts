@@ -1,19 +1,3 @@
-// export type JobType = 'FULL_TIME' | 'PART_TIME' | 'CONTRACT' | 'FREELANCE' | 'INTERNSHIP';
-// export type WorkMode = 'ONSITE' | 'REMOTE' | 'HYBRID';
-
-// export interface Salary {
-//   min: number;
-//   max: number;
-//   currency: 'IDR' | 'USD';
-//   isHidden: boolean;
-// }
-
-// export interface Company {
-//   name: string;
-//   logoUrl: string;
-//   websiteUrl?: string;
-// }
-
 export interface Job {
   id: string;
   slug: string;
@@ -26,8 +10,8 @@ export interface Job {
   salaryMax: number;
   companyName: string;
   companyLogoUrl: string;
-  postedAt: Date | null;
-  closingDate: Date;
+  postedAt: string | Date | null;
+  closingDate: string | Date;
   createdAt: Date | null;
   updatedAt: Date | null;
 }

@@ -5,20 +5,12 @@ export const dummyJobs: Job[] = [
     id: "1",
     slug: "senior-frontend-engineer-gojek",
     title: "Senior Frontend Engineer",
-    company: {
-      name: "Gojek",
-      logoUrl: "https://ui-avatars.com/api/?name=Gojek&background=random",
-      websiteUrl: "https://gojek.com"
-    },
+    companyName: "Gojek",
+    companyLogoUrl: "https://ui-avatars.com/api/?name=Gojek&background=random",
     location: "Jakarta Selatan",
-    workMode: "HYBRID",
     jobType: "FULL_TIME",
-    salary: {
-      min: 15000000,
-      max: 25000000,
-      currency: "IDR",
-      isHidden: false
-    },
+    salaryMin: 15000000,
+    salaryMax: 25000000,
     description: "<p>Kami mencari Frontend Engineer yang jago Next.js untuk tim GoFood.</p><p>Tanggung jawab: Optimasi performa web.</p>",
     requirements: [
       "Menguasai React.js & Next.js",
@@ -27,26 +19,19 @@ export const dummyJobs: Job[] = [
     ],
     postedAt: "2023-12-18T09:00:00Z",
     closingDate: "2024-01-18T09:00:00Z",
-    isFeatured: true,
-    applyUrl: "https://career.gojek.com"
+    createdAt: null,
+    updatedAt: null,
   },
   {
     id: "2",
     slug: "laravel-backend-developer-remote",
     title: "Laravel Backend Developer",
-    company: {
-      name: "StartUp Maju Jalan",
-      logoUrl: "https://ui-avatars.com/api/?name=StartUp+Maju&background=random",
-    },
+    companyName: "StartUp Maju Jalan",
+    companyLogoUrl: "https://ui-avatars.com/api/?name=StartUp+Maju&background=random",
     location: "Remote (Indonesia)",
-    workMode: "REMOTE",
     jobType: "FREELANCE",
-    salary: {
-      min: 8000000,
-      max: 12000000,
-      currency: "IDR",
-      isHidden: true
-    },
+    salaryMin: 8000000,
+    salaryMax: 12000000,
     description: "<p>Dibutuhkan backend dev untuk bantu migrasi legacy code ke Laravel 10.</p>",
     requirements: [
       "Expert di Laravel & MySQL",
@@ -55,27 +40,19 @@ export const dummyJobs: Job[] = [
     ],
     postedAt: "2023-12-17T14:00:00Z",
     closingDate: "2023-12-30T00:00:00Z",
-    isFeatured: false,
-    applyUrl: "mailto:hrd@majujalan.com"
+    createdAt: null,
+    updatedAt: null,
   },
   {
     id: "3",
     slug: "devops-engineer-tokopedia",
     title: "DevOps Engineer",
-    company: {
-      name: "Tokopedia",
-      logoUrl: "https://ui-avatars.com/api/?name=Tokopedia&background=random",
-      websiteUrl: "https://tokopedia.com"
-    },
+    companyName: "Tokopedia",
+    companyLogoUrl: "https://ui-avatars.com/api/?name=Tokopedia&background=random",
     location: "Jakarta Pusat",
-    workMode: "HYBRID",
     jobType: "FULL_TIME",
-    salary: {
-      min: 18000000,
-      max: 28000000,
-      currency: "IDR",
-      isHidden: false
-    },
+    salaryMin: 18000000,
+    salaryMax: 28000000,
     description: "<p>Mencari DevOps Engineer untuk infrastruktur cloud kami.</p>",
     requirements: [
       "Pengalaman dengan Kubernetes & Docker",
@@ -84,27 +61,19 @@ export const dummyJobs: Job[] = [
     ],
     postedAt: "2023-12-19T10:00:00Z",
     closingDate: "2024-01-20T00:00:00Z",
-    isFeatured: true,
-    applyUrl: "https://careers.tokopedia.com"
+    createdAt: null,
+    updatedAt: null,
   },
   {
     id: "4",
     slug: "mobile-developer-bukalapak",
     title: "Mobile Developer (React Native)",
-    company: {
-      name: "Bukalapak",
-      logoUrl: "https://ui-avatars.com/api/?name=Bukalapak&background=random",
-      websiteUrl: "https://bukalapak.com"
-    },
+    companyName: "Bukalapak",
+    companyLogoUrl: "https://ui-avatars.com/api/?name=Bukalapak&background=random",
     location: "Bandung",
-    workMode: "HYBRID",
     jobType: "FULL_TIME",
-    salary: {
-      min: 12000000,
-      max: 20000000,
-      currency: "IDR",
-      isHidden: false
-    },
+    salaryMin: 12000000,
+    salaryMax: 20000000,
     description: "<p>Developer React Native untuk aplikasi mobile Bukalapak.</p>",
     requirements: [
       "Mahir React Native",
@@ -113,26 +82,19 @@ export const dummyJobs: Job[] = [
     ],
     postedAt: "2023-12-16T08:00:00Z",
     closingDate: "2024-01-15T00:00:00Z",
-    isFeatured: false,
-    applyUrl: "https://careers.bukalapak.com"
+    createdAt: null,
+    updatedAt: null,
   },
   {
     id: "5",
     slug: "fullstack-developer-startup",
     title: "Fullstack Developer",
-    company: {
-      name: "TechStart Indonesia",
-      logoUrl: "https://ui-avatars.com/api/?name=TechStart&background=random",
-    },
+    companyName: "TechStart Indonesia",
+    companyLogoUrl: "https://ui-avatars.com/api/?name=TechStart&background=random",
     location: "Yogyakarta",
-    workMode: "REMOTE",
     jobType: "FULL_TIME",
-    salary: {
-      min: 10000000,
-      max: 16000000,
-      currency: "IDR",
-      isHidden: false
-    },
+    salaryMin: 10000000,
+    salaryMax: 16000000,
     description: "<p>Fullstack developer untuk startup fintech kami.</p>",
     requirements: [
       "React & Node.js",
@@ -141,27 +103,19 @@ export const dummyJobs: Job[] = [
     ],
     postedAt: "2023-12-15T11:00:00Z",
     closingDate: "2024-01-10T00:00:00Z",
-    isFeatured: false,
-    applyUrl: "https://techstart.com/careers"
+    createdAt: null,
+    updatedAt: null,
   },
   {
     id: "6",
     slug: "data-scientist-grab",
     title: "Data Scientist",
-    company: {
-      name: "Grab",
-      logoUrl: "https://ui-avatars.com/api/?name=Grab&background=random",
-      websiteUrl: "https://grab.com"
-    },
+    companyName: "Grab",
+    companyLogoUrl: "https://ui-avatars.com/api/?name=Grab&background=random",
     location: "Jakarta Selatan",
-    workMode: "HYBRID",
     jobType: "FULL_TIME",
-    salary: {
-      min: 20000000,
-      max: 32000000,
-      currency: "IDR",
-      isHidden: false
-    },
+    salaryMin: 20000000,
+    salaryMax: 32000000,
     description: "<p>Data Scientist untuk analytics platform Grab.</p>",
     requirements: [
       "Python & SQL expert",
@@ -170,27 +124,19 @@ export const dummyJobs: Job[] = [
     ],
     postedAt: "2023-12-14T09:00:00Z",
     closingDate: "2024-01-25T00:00:00Z",
-    isFeatured: true,
-    applyUrl: "https://careers.grab.com"
+    createdAt: null,
+    updatedAt: null,
   },
   {
     id: "7",
     slug: "qa-engineer-blibli",
     title: "QA Engineer",
-    company: {
-      name: "Blibli",
-      logoUrl: "https://ui-avatars.com/api/?name=Blibli&background=random",
-      websiteUrl: "https://blibli.com"
-    },
+    companyName: "Blibli",
+    companyLogoUrl: "https://ui-avatars.com/api/?name=Blibli&background=random",
     location: "Jakarta Barat",
-    workMode: "HYBRID",
     jobType: "FULL_TIME",
-    salary: {
-      min: 9000000,
-      max: 15000000,
-      currency: "IDR",
-      isHidden: false
-    },
+    salaryMin: 9000000,
+    salaryMax: 15000000,
     description: "<p>QA Engineer untuk testing aplikasi e-commerce.</p>",
     requirements: [
       "Automation testing",
@@ -199,27 +145,19 @@ export const dummyJobs: Job[] = [
     ],
     postedAt: "2023-12-13T07:00:00Z",
     closingDate: "2024-01-12T00:00:00Z",
-    isFeatured: false,
-    applyUrl: "https://blibli.com/careers"
+    createdAt: null,
+    updatedAt: null,
   },
   {
     id: "8",
     slug: "backend-engineer-shopee",
     title: "Backend Engineer (Go)",
-    company: {
-      name: "Shopee",
-      logoUrl: "https://ui-avatars.com/api/?name=Shopee&background=random",
-      websiteUrl: "https://shopee.co.id"
-    },
+    companyName: "Shopee",
+    companyLogoUrl: "https://ui-avatars.com/api/?name=Shopee&background=random",
     location: "Jakarta Selatan",
-    workMode: "HYBRID",
     jobType: "FULL_TIME",
-    salary: {
-      min: 16000000,
-      max: 26000000,
-      currency: "IDR",
-      isHidden: false
-    },
+    salaryMin: 16000000,
+    salaryMax: 26000000,
     description: "<p>Backend Engineer Go untuk microservices Shopee.</p>",
     requirements: [
       "Go programming language",
@@ -228,26 +166,19 @@ export const dummyJobs: Job[] = [
     ],
     postedAt: "2023-12-12T10:00:00Z",
     closingDate: "2024-01-22T00:00:00Z",
-    isFeatured: true,
-    applyUrl: "https://careers.shopee.co.id"
+    createdAt: null,
+    updatedAt: null,
   },
   {
     id: "9",
     slug: "frontend-designer-agora",
     title: "Frontend Engineer & Designer",
-    company: {
-      name: "Agora Indonesia",
-      logoUrl: "https://ui-avatars.com/api/?name=Agora&background=random",
-    },
+    companyName: "Agora Indonesia",
+    companyLogoUrl: "https://ui-avatars.com/api/?name=Agora&background=random",
     location: "Surabaya",
-    workMode: "REMOTE",
     jobType: "FULL_TIME",
-    salary: {
-      min: 11000000,
-      max: 18000000,
-      currency: "IDR",
-      isHidden: true
-    },
+    salaryMin: 11000000,
+    salaryMax: 18000000,
     description: "<p>Frontend Engineer dengan design skills untuk UI/UX.</p>",
     requirements: [
       "React & Vue.js",
@@ -256,27 +187,19 @@ export const dummyJobs: Job[] = [
     ],
     postedAt: "2023-12-11T14:00:00Z",
     closingDate: "2024-01-08T00:00:00Z",
-    isFeatured: false,
-    applyUrl: "https://agora.id/careers"
+    createdAt: null,
+    updatedAt: null,
   },
   {
     id: "10",
     slug: "cloud-architect-bca",
     title: "Cloud Architect",
-    company: {
-      name: "Bank BCA",
-      logoUrl: "https://ui-avatars.com/api/?name=BCA&background=random",
-      websiteUrl: "https://bca.co.id"
-    },
+    companyName: "Bank BCA",
+    companyLogoUrl: "https://ui-avatars.com/api/?name=BCA&background=random",
     location: "Jakarta Pusat",
-    workMode: "HYBRID",
     jobType: "FULL_TIME",
-    salary: {
-      min: 25000000,
-      max: 40000000,
-      currency: "IDR",
-      isHidden: true
-    },
+    salaryMin: 25000000,
+    salaryMax: 40000000,
     description: "<p>Cloud Architect untuk transformasi digital BCA.</p>",
     requirements: [
       "AWS & Azure certified",
@@ -285,26 +208,19 @@ export const dummyJobs: Job[] = [
     ],
     postedAt: "2023-12-10T09:00:00Z",
     closingDate: "2024-02-01T00:00:00Z",
-    isFeatured: true,
-    applyUrl: "https://bca.co.id/careers"
+    createdAt: null,
+    updatedAt: null,
   },
   {
     id: "11",
     slug: "security-engineer-bntech",
     title: "Security Engineer",
-    company: {
-      name: "BN Technology",
-      logoUrl: "https://ui-avatars.com/api/?name=BNTech&background=random",
-    },
+    companyName: "BN Technology",
+    companyLogoUrl: "https://ui-avatars.com/api/?name=BNTech&background=random",
     location: "Remote",
-    workMode: "REMOTE",
     jobType: "FULL_TIME",
-    salary: {
-      min: 17000000,
-      max: 27000000,
-      currency: "IDR",
-      isHidden: false
-    },
+    salaryMin: 17000000,
+    salaryMax: 27000000,
     description: "<p>Security Engineer untuk penetration testing dan security audit.</p>",
     requirements: [
       "Cybersecurity knowledge",
@@ -313,27 +229,19 @@ export const dummyJobs: Job[] = [
     ],
     postedAt: "2023-12-09T11:00:00Z",
     closingDate: "2024-01-28T00:00:00Z",
-    isFeatured: false,
-    applyUrl: "https://bntech.io/careers"
+    createdAt: null,
+    updatedAt: null,
   },
   {
     id: "12",
     slug: "product-manager-gojek",
     title: "Product Manager",
-    company: {
-      name: "Gojek",
-      logoUrl: "https://ui-avatars.com/api/?name=Gojek&background=random",
-      websiteUrl: "https://gojek.com"
-    },
+    companyName: "Gojek",
+    companyLogoUrl: "https://ui-avatars.com/api/?name=Gojek&background=random",
     location: "Jakarta Selatan",
-    workMode: "HYBRID",
     jobType: "FULL_TIME",
-    salary: {
-      min: 19000000,
-      max: 30000000,
-      currency: "IDR",
-      isHidden: false
-    },
+    salaryMin: 19000000,
+    salaryMax: 30000000,
     description: "<p>Product Manager untuk GoFood vertical.</p>",
     requirements: [
       "Product strategy experience",
@@ -342,7 +250,7 @@ export const dummyJobs: Job[] = [
     ],
     postedAt: "2023-12-08T13:00:00Z",
     closingDate: "2024-02-05T00:00:00Z",
-    isFeatured: true,
-    applyUrl: "https://career.gojek.com"
+    createdAt: null,
+    updatedAt: null,
   }
 ];
